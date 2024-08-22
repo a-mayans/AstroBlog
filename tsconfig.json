@@ -4,9 +4,5 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro"
-  ],
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+  ]
 }
