@@ -1,0 +1,33 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+const lang = Astro.currentLocale;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    height: calc(100dvh - 155px);
+  }
+</style>

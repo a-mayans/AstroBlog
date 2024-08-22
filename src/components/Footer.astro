@@ -1,0 +1,20 @@
+---
+const currentLang = Astro.currentLocale || "es";
+const footerTexts = {
+  es: "Blog hecho con Astro - by Mayidev",
+  en: "Blog made with Astro - by Mayidev",
+};
+---
+
+<footer>
+  <p>{footerTexts[currentLang]}</p>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    padding: 0.3rem;
+    background-color: #333;
+    color: rgb(254, 205, 81);
+  }
+</style>

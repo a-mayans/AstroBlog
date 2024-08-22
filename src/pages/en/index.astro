@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+
+const posts = await getCollection("blog", ({ id }) => {
+  return id.startsWith("en/");
+});
+---
+
+<Layout title="My blog">
+  <h1>Welcome to my blog!</h1>
+  {
+    posts.map((post) => {
+      return <Card {...post.data} slug={post.slug} />;
+    })
+  }
+</Layout>
+
+<style>
+  h1 {
+    color: rgb(252, 180, 0);
+  }
+</style>
